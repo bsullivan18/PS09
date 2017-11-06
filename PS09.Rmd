@@ -1,6 +1,6 @@
 ---
 title: "STAT/MATH 495: Problem Set 09"
-author: "WRITE YOUR NAME(S) HERE"
+author: "Brenna Sullivan"
 date: "2017-11-07"
 output:
   html_document:
@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 set.seed(76)
 
 library(tidyverse)
+library(mosaic)
 ```
 
 
@@ -30,13 +31,14 @@ Please indicate who you collaborated with on this assignment:
 
 
 # Question 1: Run k-means
-
 ```{r}
 observations_1 <- read_csv("data/observations_1.csv")
 observations_2 <- read_csv("data/observations_2.csv")
+```
 
+```{r}
 # Set observations to be one of two datasets
-observations <- observations_2
+observations <- observations_1
 
 # Fit model for k=2
 k <- 2
@@ -71,10 +73,13 @@ results.
 
 **Answers**:
 
-1.
-1.
-1.
-1.
+1. The results for `observation_1` are rather inconsistent.  Sometimes, the plot shows that cluster 1 consists of most of the points that are above the line x2=1.  Other times, the clusters appear to be split roughly by the vertical line x1=1 and the clusters are, thus, very different with respect to the different simulations.  
+
+1.	The root cause of the inconsistency in the clusters for `observations_1` is likely the KMC algorithm.  To explain, the algorithm starts by assigning two random points as cluster centers and minimizing the sum of squares to these centers to create the two distinct clusters.  Since the data for `observations_1` is very random, with points all over the plot, and doesn't appear to follow a trend, the clusters change a lot in response to the changing center points.
+
+1. The results for `observations_2` are much more consistent than those of `observations_1`.  Regardless of how many times you run the code, one cluster consists, roughly, of all the points where x1 is greater than 1 and x2 is greater than 1.  The other cluster consists of the points where x1 and x2 are both less than 1. 
+
+1. Unlike `obersvations_1`, `oberservations_2` has points that are more compact within two locations.  In the 10 simulations, one cluster is in the upper right of the plot and the other contains the points in the lower left.  No matter what the randomly picked cluster centers are in this case, one cluster consist of the upper right points and the other will have the bottom left points, as long as one center is in the upper right and the other is in the lower left, as this will minimize the sum of squares.
 
 
 
