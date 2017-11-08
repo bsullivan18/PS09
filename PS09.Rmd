@@ -75,7 +75,7 @@ results.
 
 1. The results for `observation_1` are rather inconsistent.  Sometimes, the plot shows that cluster 1 consists of most of the points that are above the line x2=1.  Other times, the clusters appear to be split roughly by the vertical line x1=1 and the clusters are, thus, very different with respect to the different simulations.  
 
-1.	The root cause of the inconsistency in the clusters for `observations_1` is likely the KMC algorithm.  To explain, the algorithm starts by assigning two random points as cluster centers and minimizing the sum of squares to these centers to create the two distinct clusters.  Since the data for `observations_1` is very random, with points all over the plot, and doesn't appear to follow a trend, the clusters change a lot in response to the changing center points.
+1.	The root cause of the inconsistency in the clusters for `observations_1` is likely the KMC algorithm.  To explain, the algorithm starts by assigning two random points as cluster centers and minimizing the sum of squares to these centers to create the two distinct clusters.  Since the data for `observations_1` is very random, with points all over the plot, and doesn't appear to follow a trend, the clusters change a lot in response to the initial location center points.
 
 1. The results for `observations_2` are much more consistent than those of `observations_1`.  Regardless of how many times you run the code, one cluster consists, roughly, of all the points where x1 is greater than 1 and x2 is greater than 1.  The other cluster consists of the points where x1 and x2 are both less than 1. 
 
